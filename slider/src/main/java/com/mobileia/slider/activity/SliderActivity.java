@@ -35,6 +35,10 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
      * Almacena contender de la vista inferior
      */
     protected RelativeLayout mContainerBottom;
+    /**
+     * Almacena contender de la vista superior
+     */
+    protected RelativeLayout mContainerTop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
         setUpViews();
         // Configurar vista de la parte inferior
         setUpCustomBottom();
+        // Configurar vista de la parte superior
+        setUpCustomTop();
     }
 
     /**
@@ -59,10 +65,28 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
      * Infla la vista que se mostrara en la parte inferior
      */
     protected void setUpCustomBottom(){
+        // Verificar si se asigno
+        if(getBottomView() == 0){
+            return;
+        }
         // Inflamos la vista
         View view = LayoutInflater.from(this).inflate(getBottomView(), mContainerBottom, false);
         // La agregamos al contenedor
         mContainerBottom.addView(view);
+    }
+
+    /**
+     * Infla la vista que se mostrara en la parte inferior
+     */
+    protected void setUpCustomTop(){
+        // Verificar si se asigno
+        if(getTopView() == 0){
+            return;
+        }
+        // Inflamos la vista
+        View view = LayoutInflater.from(this).inflate(getTopView(), mContainerTop, false);
+        // La agregamos al contenedor
+        mContainerTop.addView(view);
     }
 
     /**
@@ -82,6 +106,8 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
         mIndicator = (Indicator)findViewById(R.id.indicator);
         // Obtener contendor de la parte inferior
         mContainerBottom = (RelativeLayout)findViewById(R.id.container_bottom);
+        // Obtener contendor de la parte superior
+        mContainerTop = (RelativeLayout)findViewById(R.id.container_top);
     }
 
     /**
@@ -89,4 +115,10 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
      * @return
      */
     protected int getBottomView(){ return 0; }
+
+    /**
+     * Devuelve el recurso de layout para mostrar en la parte superior de la pantalla
+     * @return
+     */
+    protected int getTopView(){ return 0; }
 }

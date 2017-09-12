@@ -23,4 +23,9 @@ public class MainActivity extends SliderActivity {
     protected int getBottomView() {
         return R.layout.item_bottom;
     }
+
+    @Override
+    protected int getTopView() {
+        return R.layout.item_top;
+    }
 }
