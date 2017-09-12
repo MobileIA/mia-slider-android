@@ -5,18 +5,19 @@ import android.os.Bundle;
 
 import com.mobileia.slider.activity.SliderActivity;
 import com.mobileia.slider.adapter.ImageAdapter;
+import com.mobileia.slider.adapter.ImageWithTextAdapter;
 
 import java.util.ArrayList;
 
 public class MainActivity extends SliderActivity {
 
     @Override
-    protected void setUpAdapter(ImageAdapter adapter) {
-        adapter.add(R.drawable.image1);
-        adapter.add(R.drawable.image2);
-        adapter.add(R.drawable.image3);
-        adapter.add(R.drawable.image4);
-        adapter.add(R.drawable.image5);
+    protected void setUpAdapter(ImageWithTextAdapter adapter) {
+        adapter.add(R.drawable.image1, R.string.title_one, R.string.caption_one);
+        adapter.add(R.drawable.image2, R.string.title_two, R.string.caption_two);
+        adapter.add(R.drawable.image3, R.string.title_three, R.string.caption_three);
+        adapter.add(R.drawable.image4, R.string.title_one, R.string.caption_one);
+        adapter.add(R.drawable.image5, R.string.title_one, R.string.caption_one);
     }
 
     @Override

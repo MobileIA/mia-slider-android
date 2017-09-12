@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Mobileia Slider</string>
+    <string name="title_one">Este es un titulo cualquiera</string>
+    <string name="caption_one">Segunda linea del ejemplo, por favor rellenar con algo.</string>
+    <string name="title_two">Este es un titulo cualquiera 2</string>
+    <string name="caption_two">Segunda linea del ejemplo, por favor rellenar con algo. Para que este completo.</string>
+    <string name="title_three">3 Un titulo mas normal</string>
+    <string name="caption_three">Tercera imagen para mostrar. Segunda linea del ejemplo, por favor rellenar con algo. Para que este completo.</string>
 </resources>
