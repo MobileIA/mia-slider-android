@@ -18,7 +18,7 @@ import com.mobileia.slider.view.Indicator;
  * Created by matiascamiletti on 12/9/17.
  */
 
-public class SliderActivity extends AppCompatActivity implements ImageAdapter.OnNotifyAdapter {
+abstract public class SliderActivity extends AppCompatActivity {
     /**
      * Almacena viewPager
      */
@@ -50,15 +50,6 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
         setUpCustomBottom();
         // Configurar vista de la parte superior
         setUpCustomTop();
-    }
-
-    /**
-     * Informa cuando se agregan nuevos items al pager
-     */
-    @Override
-    public void onNewItems() {
-        // Asignamos viewPager para calcular los indicadores
-        mIndicator.setViewPager(mViewPager);
     }
 
     /**
@@ -97,18 +88,23 @@ public class SliderActivity extends AppCompatActivity implements ImageAdapter.On
         mViewPager = (ViewPager)findViewById(R.id.pager);
         // Creamos Adapter
         mAdapter = new ImageAdapter(getSupportFragmentManager());
-        mAdapter.setOnNotifyAdapter(this);
+        // Configuración custom del adapter
+        setUpAdapter(mAdapter);
         // Asignamos el adapter
         mViewPager.setAdapter(mAdapter);
         // Asignamos la animación de paginado
         mViewPager.setPageTransformer(true, new FadePageTransformer());
         // Obtenemos el Indicador
         mIndicator = (Indicator)findViewById(R.id.indicator);
+        // Setear el viewPager
+        mIndicator.setViewPager(mViewPager);
         // Obtener contendor de la parte inferior
         mContainerBottom = (RelativeLayout)findViewById(R.id.container_bottom);
         // Obtener contendor de la parte superior
         mContainerTop = (RelativeLayout)findViewById(R.id.container_top);
     }
+
+    abstract protected void setUpAdapter(ImageAdapter adapter);
 
     /**
      * Devuelve el recurso de layout para mostrar en la parte inferior de la pantalla

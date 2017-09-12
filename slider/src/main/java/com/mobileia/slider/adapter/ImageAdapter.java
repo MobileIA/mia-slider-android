@@ -18,10 +18,6 @@ public class ImageAdapter extends FragmentStatePagerAdapter {
      * Almacena las referencias a las imagenes
      */
     protected ArrayList<Integer> mValues = new ArrayList<>();
-    /**
-     * Listener para informar cuando se agregan nuevos items
-     */
-    protected OnNotifyAdapter mListener;
 
     /**
      * Constructor por defecto
@@ -48,9 +44,6 @@ public class ImageAdapter extends FragmentStatePagerAdapter {
     public void add(@DrawableRes int imageResource){
         mValues.add(imageResource);
         notifyDataSetChanged();
-        if(mListener != null){
-            mListener.onNewItems();
-        }
     }
 
     /**
@@ -60,16 +53,5 @@ public class ImageAdapter extends FragmentStatePagerAdapter {
     public void add(ArrayList<Integer> images){
         mValues.addAll(images);
         notifyDataSetChanged();
-        if(mListener != null){
-            mListener.onNewItems();
-        }
-    }
-
-    public void setOnNotifyAdapter(OnNotifyAdapter listener){
-        mListener = listener;
-    }
-
-    public interface OnNotifyAdapter{
-        void onNewItems();
     }
 }
