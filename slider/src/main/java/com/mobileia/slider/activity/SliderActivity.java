@@ -2,8 +2,6 @@ package com.mobileia.slider.activity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -12,7 +10,6 @@ import android.view.ViewTreeObserver;
 import android.widget.RelativeLayout;
 
 import com.mobileia.slider.R;
-import com.mobileia.slider.adapter.ImageAdapter;
 import com.mobileia.slider.adapter.ImageWithTextAdapter;
 import com.mobileia.slider.transformer.FadePageTransformer;
 import com.mobileia.slider.view.Indicator;
@@ -106,11 +103,11 @@ abstract public class SliderActivity extends AppCompatActivity {
         mViewPager = (ViewPager)findViewById(R.id.pager);
         // Creamos Adapter
         mAdapter = new ImageWithTextAdapter(getSupportFragmentManager());
-        // Configuración custom del adapter
+        // Configuracion custom del adapter
         setUpAdapter(mAdapter);
         // Asignamos el adapter
         mViewPager.setAdapter(mAdapter);
-        // Asignamos la animación de paginado
+        // Asignamos la animacion de paginado
         mViewPager.setPageTransformer(true, new FadePageTransformer());
         // Obtenemos el Indicador
         mIndicator = (Indicator)findViewById(R.id.indicator);

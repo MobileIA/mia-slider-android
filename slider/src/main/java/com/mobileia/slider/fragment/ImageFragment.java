@@ -29,7 +29,7 @@ public class ImageFragment extends Fragment {
      */
     public static final String ARGUMENT_TITLE_REFERENCE = "ARGUMENT_TITLE_REFERENCE";
     /**
-     * Constante para el parametro del descripción
+     * Constante para el parametro del descripcion
      */
     public static final String ARGUMENT_CAPTION_REFERENCE = "ARGUMENT_CAPTION_REFERENCE";
     /**
@@ -45,7 +45,7 @@ public class ImageFragment extends Fragment {
      */
     protected int mTitleResource = 0;
     /**
-     * Almacena la descripción
+     * Almacena la descripcion
      */
     protected int mCaptionResource = 0;
     /**
@@ -162,7 +162,7 @@ public class ImageFragment extends Fragment {
     }
 
     /**
-     * Configura la vista de la descripción
+     * Configura la vista de la descripcion
      * @param caption
      */
     protected void setUpCaption(TextView caption){

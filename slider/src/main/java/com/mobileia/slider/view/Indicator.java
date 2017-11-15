@@ -25,7 +25,7 @@ public class Indicator extends LinearLayout {
      */
     protected ViewPager mViewPager;
     /**
-     * Almacena la ultima posición
+     * Almacena la ultima posicion
      */
     protected int mLastPosition = -1;
 
@@ -118,7 +118,7 @@ public class Indicator extends LinearLayout {
         if(mViewPager == null || mViewPager.getAdapter() == null){
             return;
         }
-        // Reseteamos posición
+        // Reseteamos posicion
         mLastPosition = -1;
         // Creamos los indicadores
         createIndicators();
